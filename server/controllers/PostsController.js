@@ -12,9 +12,11 @@ export const getPosts =async (req, res)=>{
 
 export const createPost=(req, res)=>{
     try{
-
+        const post= req.body;
+        const newPost= new PostMessage(post);
+        res.status(200).json(newPost);
     }catch(error){
-
+        res.status(409).json({message:error.message});
     }
 
 }
