@@ -1,15 +1,15 @@
-import { Switch } from "@material-ui/core"
 import Posts from "../components/Posts/Posts";
 
 // const reducer=(state=[], action)=>{
-export default reducer=(posts=[], action)=>{
+export default (posts=[], action)=>{
     switch (action.type) {
         case 'FETCH_ALL':
-            return posts;
+            console.log(action.payload)
+            return action.payload;
         case 'CREATE':
             return posts;
     
         default:
-            break;
+            return posts;
     }
 }
