@@ -19,14 +19,25 @@ function Form({ currentId, setCurrentId }) {
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  const clear = (e) => {};
+  const clear = (e) => {
+    setCurrentId(null);
+    setPostData({
+      creator: "",
+      title: "",
+      messages: "",
+      tags: "",
+      selectedFile: "",
+    });
+  };
   const handleSubmit = (e) => {
+    console.log(currentId, " ", postData);
     e.preventDefault();
     if (currentId) {
       dispatch(updatePost(currentId, postData));
     } else {
       dispatch(createPost(postData));
     }
+    clear();
   };
 
   useEffect(() => {
@@ -40,7 +51,9 @@ function Form({ currentId, setCurrentId }) {
         className={`${classes.form} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a Memory</Typography>
+        <Typography variant="h6">
+          {currentId ? "Editing a Mempry" : "Creating a Memory"}
+        </Typography>
         <TextField
           name="creator"
           variant="outlined"

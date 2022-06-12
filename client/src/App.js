@@ -16,7 +16,7 @@ function App() {
   const url = "http://localhost:5000/posts";
 
   useEffect(() => {
-    const data = dispatch(getPosts());
+    dispatch(getPosts());
 
     // const resdata = axios.get(url).then((res) => {
     //   const yy = res.data;
@@ -26,7 +26,7 @@ function App() {
     return () => {
       //   second
     };
-  }, [dispatch]);
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">
