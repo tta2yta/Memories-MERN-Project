@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { createPost } from "../../actions/posts";
 import useStyles from "./styles";
 
-function Form() {
+function Form({ currentId, setCurrentId }) {
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
@@ -18,9 +18,12 @@ function Form() {
 
   const clear = (e) => {};
   const handleSubmit = (e) => {
-    console.log(postData);
     e.preventDefault();
-    dispatch(createPost(postData));
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
   return (
     <Paper className={classes.paper}>
