@@ -18,6 +18,7 @@ function Form() {
 
   const clear = (e) => {};
   const handleSubmit = (e) => {
+    console.log(postData);
     e.preventDefault();
     dispatch(createPost(postData));
   };
@@ -63,7 +64,7 @@ function Form() {
           variant="outlined"
           label="Tags"
           fullWidth
-          value={postData.creator}
+          value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
         />
         <div className={classes.fileInput}>

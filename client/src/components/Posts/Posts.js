@@ -1,16 +1,33 @@
-import React from 'react'
-import Post from './Post/Post'
-import useStyles from './styles.js'
+import React, { useEffect } from "react";
+import Post from "./Post/Post";
+import useStyles from "./styles.js";
+import { useSelector } from "react-redux";
+import { CircularProgress, Grid } from "@material-ui/core";
 
 function Posts() {
-  const classes= useStyles()
-  return (
-    <>
-        <h1>Posts</h1>
-        <Post />
-        <Post />
-    </>
-  )
+  const posts = useSelector((state) => state.posts);
+  const classes = useStyles();
+
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
+
+  return !posts.length ? (
+    <CircularProgress />
+  ) : (
+    <Grid
+      className={classes.container}
+      container
+      alignItem="stretch"
+      spacing={3}
+    >
+      {posts.map((post) => (
+        <Grid key={post._id} item xs={12} sm={6}>
+          <Post post={post} />
+        </Grid>
+      ))}
+    </Grid>
+  );
 }
 
-export default Posts
+export default Posts;
