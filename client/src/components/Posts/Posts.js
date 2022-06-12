@@ -18,7 +18,7 @@ function Posts() {
     <Grid
       className={classes.container}
       container
-      alignItem="stretch"
+      alignItems="stretch"
       spacing={3}
     >
       {posts.map((post) => (

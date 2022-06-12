@@ -33,17 +33,17 @@ function Post({ post }) {
       </div>
       <div className={classes.overlay2}>
         <Button style={{ color: "white" }} size="small" onClick={() => {}}>
-          <MoreHorizIcon fontSize="default"></MoreHorizIcon>
+          <MoreHorizIcon fontSize="medium"></MoreHorizIcon>
         </Button>
       </div>
       <div className={classes.details}>
-        <Typography variant="body2" color="testSecondary">
+        <Typography variant="body2" color="textSecondary">
           {post.tags.map((tags) => `#${tags}`)}
         </Typography>
       </div>
       <CardContent>
         <Typography className={classes.title} variant="h5" gutterBottom>
-          {post.message}
+          {post.messages}
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>

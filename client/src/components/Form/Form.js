@@ -9,7 +9,7 @@ function Form() {
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
-    message: "",
+    messages: "",
     tags: "",
     selectedFile: "",
   });
@@ -50,13 +50,13 @@ function Form() {
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
         <TextField
-          name="message"
+          name="messages"
           variant="outlined"
           label="Message"
           fullWidth
-          value={postData.message}
+          value={postData.messages}
           onChange={(e) =>
-            setPostData({ ...postData, message: e.target.value })
+            setPostData({ ...postData, messages: e.target.value })
           }
         />
         <TextField

@@ -7,7 +7,7 @@ import Form from "./components/Form/Form";
 import useStyles from "./styles.js";
 
 import { getPosts } from "./actions/posts";
-import axios from "axios";
+import "./index.css";
 
 function App() {
   const classes = useStyles();
