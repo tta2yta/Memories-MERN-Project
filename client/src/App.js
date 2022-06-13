@@ -40,6 +40,8 @@ function App() {
         <Container>
           <Grid
             container
+            // direction="column-reverse"
+            className={classes.mainContainer}
             justifyContent="space-between"
             alignItems="stretch"
             spacing={3}
