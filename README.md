@@ -24,7 +24,7 @@ Provide tags and upload images.
 
 
 ## 🔴 Live Demo <a name = "live"></a>
-**Click [here](https://melodious-sunburst-39d556.netlify.app/) in order to see a Live Demo of this project.**
+**Click [here](https://memories-app-prj.netlify.app/) in order to see a Live Demo of this project.**
 
 
 ## 🔧 Built with<a name = "with"></a>
